@@ -7,7 +7,7 @@ services:
     environment:
       - ROOT_PASSWORD=password
     ports:
-      - 10003:22
+      - "10003:22"
     cap_add:
       - "SYS_MODULE"
     restart: unless-stopped
