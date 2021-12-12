@@ -1,19 +1,13 @@
 version: "2.1"
 services:
   openssh-server:
-    image: lscr.io/linuxserver/openssh-server
+    image: mulinbc/sshd
     container_name: 03_sys-module
     hostname: 03_sys-module
     environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/London
-      - SUDO_ACCESS=true 
-      - PASSWORD_ACCESS=true 
-      - USER_PASSWORD=password
-      - USER_NAME=attacker
+      - ROOT_PASSWORD=password
     ports:
-      - 10003:2222
+      - 10003:22
     cap_add:
       - "SYS_MODULE"
     restart: unless-stopped
