@@ -10,4 +10,6 @@ services:
       - "10003:22"
     cap_add:
       - "SYS_MODULE"
+    volumes:
+      - "/lib/modules:/lib/modules"
     restart: unless-stopped
