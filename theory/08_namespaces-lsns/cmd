@@ -1,0 +1,2 @@
+docker run --rm --name test -d alpine ping 8.8.8.8
+sudo lsns | tail -n 7

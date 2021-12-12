@@ -1,0 +1,19 @@
+version: "2.1"
+services:
+  openssh-server:
+    privileged: true
+
+    image: lscr.io/linuxserver/openssh-server
+    container_name: 01_privileged
+    hostname: 01_privileged 
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - SUDO_ACCESS=true 
+      - PASSWORD_ACCESS=true 
+      - USER_PASSWORD=password
+      - USER_NAME=attacker
+    ports:
+      - 10001:2222
+    restart: unless-stopped

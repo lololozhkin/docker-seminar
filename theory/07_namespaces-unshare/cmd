@@ -1,0 +1,23 @@
+# Понадобится 2 терминала для наглядности
+
+# 1
+ls -l /proc/$$/ns
+
+# 2
+sudo unshare --uts bash
+ls -l /proc/$$/ns
+
+# 1
+hostname
+# -> lololozhkin
+
+# 2
+hostname
+# -> lololozhkin
+hostname abacaba
+hostname
+# -> abacaba
+
+# 1
+hostname
+# -> lololozhkin

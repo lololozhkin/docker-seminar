@@ -1,0 +1,19 @@
+version: "2.1"
+services:
+  openssh-server:
+    image: lscr.io/linuxserver/openssh-server
+    container_name: 02_mounted-socket
+    hostname: 02_mounted-socket
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/London
+      - SUDO_ACCESS=true 
+      - PASSWORD_ACCESS=true 
+      - USER_PASSWORD=password
+      - USER_NAME=attacker
+    ports:
+      - 10002:2222
+    volumes:
+      - /var/run/docker.sock:/root/docker.sock
+    restart: unless-stopped

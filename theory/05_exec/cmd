@@ -1,0 +1,3 @@
+docker container run --name test-nginx -d nginx
+docker exec -it test-nginx bash
+cat /usr/share/nginx/html/index.html

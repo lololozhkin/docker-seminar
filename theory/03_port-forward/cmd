@@ -1,0 +1,2 @@
+docker container run -d -p 1337:80 nginx
+curl localhost:1337

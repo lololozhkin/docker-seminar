@@ -1,0 +1,12 @@
+sudo nsns | tail -n 7
+
+sudo nsenter -t <pid> --mount --uts --ipc --pid --net --cgroup /bin/sh
+###
+docker exec -it test sh
+
+
+/bin/ps aux
+
+/sbin/ip a
+
+/bin/hostname
