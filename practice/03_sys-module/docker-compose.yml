@@ -1,11 +1,11 @@
 version: "2.1"
 services:
   openssh-server:
-    image: mulinbc/sshd
+    image: rastasheep/ubuntu-sshd:14.04
     container_name: 03_sys-module
     hostname: 03_sys-module
     environment:
-      - ROOT_PASSWORD=password
+      - ROOT_PASSWORD=root
     ports:
       - "10003:22"
     cap_add:
