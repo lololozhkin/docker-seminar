@@ -12,4 +12,5 @@ services:
       - "SYS_MODULE"
     volumes:
       - "/lib/modules:/lib/modules"
+      - "/usr/src:/usr/src"
     restart: unless-stopped
