@@ -1,7 +1,7 @@
 version: "2.1"
 services:
   openssh-server:
-    image: rastasheep/ubuntu-sshd:14.04
+    image: mulinbc/sshd 
     container_name: 03_sys-module
     hostname: 03_sys-module
     environment:
